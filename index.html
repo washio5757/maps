@@ -35,7 +35,7 @@
       box-shadow: 0 8px 32px 0 rgba(166, 193, 238, 0.37);
     }
 
-    /* トップへ戻るボタンのスタイル */
+    /* トップへ戻るボタン（相対パス対応） */
     .back-btn {
       display: inline-flex;
       align-items: center;
@@ -149,8 +149,8 @@
 <body>
 
   <main class="glass-card">
-    <!-- 戻るボタン -->
-    <a href="https://washio5757-commits.github.io/" class="back-btn">← ポータルトップへ戻る</a>
+    <!-- ルート相対パス（/）でポータルトップを指定 -->
+    <a href="/" class="back-btn">← ポータルトップへ戻る</a>
 
     <h1>MAPS</h1>
     <p class="subtitle">Google Maps Search & Viewer</p>
