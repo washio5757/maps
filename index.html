@@ -17,7 +17,6 @@
       justify-content: center;
       align-items: center;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      /* 桃色（#fbc2eb）から藤色（#a6c1ee）へのグラデーション */
       background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
       background-attachment: fixed;
       color: #333;
@@ -36,6 +35,30 @@
       box-shadow: 0 8px 32px 0 rgba(166, 193, 238, 0.37);
     }
 
+    /* トップへ戻るボタンのスタイル */
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0.5rem 1.2rem;
+      color: #333;
+      background: rgba(255, 255, 255, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+      transition: all 0.2s ease;
+      backdrop-filter: blur(8px);
+    }
+
+    .back-btn:hover {
+      background: rgba(255, 255, 255, 0.7);
+      transform: translateX(-3px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
     h1 {
       font-size: 2rem;
       text-align: center;
@@ -50,7 +73,6 @@
       margin-bottom: 2rem;
     }
 
-    /* 検索エリア */
     .search-box {
       display: flex;
       gap: 10px;
@@ -69,10 +91,6 @@
       color: #333;
     }
 
-    input[type="text"]::placeholder {
-      color: #777;
-    }
-
     button {
       padding: 0.8rem 1.5rem;
       border-radius: 30px;
@@ -89,7 +107,6 @@
       transform: translateY(-1px);
     }
 
-    /* ショートカットボタン */
     .shortcut-buttons {
       display: flex;
       flex-wrap: wrap;
@@ -113,7 +130,6 @@
       background: rgba(255, 255, 255, 0.5);
     }
 
-    /* マップ埋め込みコンテナ */
     .map-container {
       width: 100%;
       height: 400px;
@@ -133,16 +149,17 @@
 <body>
 
   <main class="glass-card">
+    <!-- 戻るボタン -->
+    <a href="https://washio5757-commits.github.io/" class="back-btn">← ポータルトップへ戻る</a>
+
     <h1>MAPS</h1>
     <p class="subtitle">Google Maps Search & Viewer</p>
 
-    <!-- 検索フォーム -->
     <div class="search-box">
       <input type="text" id="locationInput" placeholder="場所・施設名を入力（例: 東京タワー, 富士山）" onkeydown="if(event.key==='Enter') updateMap()">
       <button onclick="updateMap()">検索</button>
     </div>
 
-    <!-- ショートカットボタン -->
     <div class="shortcut-buttons">
       <button class="chip-btn" onclick="setMap('東京駅')">東京駅</button>
       <button class="chip-btn" onclick="setMap('大阪駅')">大阪駅</button>
@@ -151,7 +168,6 @@
       <button class="chip-btn" onclick="setMap('沖縄美ら海水族館')">美ら海水族館</button>
     </div>
 
-    <!-- Google Map 埋め込みエリア -->
     <div class="map-container">
       <iframe 
         id="mapIframe"
